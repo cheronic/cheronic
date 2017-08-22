@@ -5,12 +5,17 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title></title>
         <script type="text/javascript">
-        function Pickles(){
-          Shit goes here and runs when the page is loaded
-        }
-        console.log
+        function pickles(){
+          let width = window.screen.availWidth;
+          let height = window.screen.availHeight;
+          console.log(width, height);
+        let x = document.getElementById('test');
+        x.setAttribute("width", width);
+        x.setAttribute("height", height);
+      }
         </script>
     </head>
-    <body onload="Pickles()">
+    <body onload="pickles()">
+      <canvas id="test"></canvas>
     </body>
 </html>

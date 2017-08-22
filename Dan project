@@ -1,0 +1,56 @@
+"Get rich or live forever trying to get more rich" by Daniel Cheron
+
+Pseudo code:
+
+  $ Game area
+- Draw a grid [OR] detect the boundaries of the window the user has opened
+
+  $ Game objects
+- An image gif of someone walking
+- A picture of a coin or a gif of a coin/prize
+
+  $ Game algorithms
+- Player moves the gif using event listeners
+- Gold coins are generated at random on the page
+- Once the player resides in the same coordinates or square as the coin, it is added to a counter at the top.
+
+-------------------------------------------
+$ Game area
+
+- Run a function when the user opens the HTML page. You will write the rest of the code inside this.
+  Task => Make a generic html page that references the JS file you will use to write your code in
+
+- Either generate a grid (look up how to generate a table using JS)
+OR
+- Use javascript to detect the width and height parameters of the tab/window and store these to a variable
+
+- Provide some sort of variables for MIN and MAX game area values
+- If the player is IN the last cell of a table, do not allow them to leave. (Can be expanded later to have multiple game zones)
+- If the player is at the edge of the screen, do not let them proceed further
+
+
+- know the width of the sprite
+- cut the avail width into parts
+- detect if the width of the sprite moving "x" number of times will not equal a whole number.
+
+-------------------------------------------
+
+$ Game Objects
+
+- Assign variables that track the player's movements through the game area.
+  - This can take the form of adding a value to an array, or assigning a new value to a variable whose value is the player's
+  position on the screen
+
+- Assign a variable that knows where on the screen the coins are
+
+-------------------------------------------
+
+$ Game algorithms
+- Each time the player presses up down left right on the keyboard (or asdw), move the gif one "unit" in that direction.
+  - Assign a series of event listeners to wait for user input and call a function.
+    - Something like "when I click up, run function moveUP"
+- Gold coins are generated at random on the page.
+    - You can use a randomize function BUILT INTO JS and create an array (series of values) that distribute the coins
+- Once the player resides in the same coordinates or square as the coin, it is added to a counter at the top.
+  - Check to see if the location of the player (variable) is EQUAL to the location of a generated COIN
+    - If so, add one/10 wtv points to the counter at the top of the screen.
