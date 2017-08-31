@@ -1,56 +1,73 @@
-"Get rich or live forever trying to get more rich" by Daniel Cheron
+Llama Quest - Get furry or die trying 
 
 Pseudo code:
+-------------------------------------------
 
   $ Game area
 - Draw a grid [OR] detect the boundaries of the window the user has opened
 
   $ Game objects
-- An image gif of someone walking
-- A picture of a coin or a gif of a coin/prize
+- An image gif of someone walking (llama)
+- A picture of something the lama wants to eat
+- A picture of something the llama can jump up on or attempt to break with a head bash/jump (like mario)
 
   $ Game algorithms
-- Player moves the gif using event listeners
-- Gold coins are generated at random on the page
-- Once the player resides in the same coordinates or square as the coin, it is added to a counter at the top.
+- Player moves the gif using event listeners. 
+- Edible things are generated using specific randomized rules
+- Once the player resides in the same coordinates or square as the edible thing, it is added to a counter at the top.
 
 -------------------------------------------
-$ Game area
-
-- Run a function when the user opens the HTML page. You will write the rest of the code inside this.
-  Task => Make a generic html page that references the JS file you will use to write your code in
-
-- Either generate a grid (look up how to generate a table using JS)
-OR
-- Use javascript to detect the width and height parameters of the tab/window and store these to a variable
-
-- Provide some sort of variables for MIN and MAX game area values
-- If the player is IN the last cell of a table, do not allow them to leave. (Can be expanded later to have multiple game zones)
-- If the player is at the edge of the screen, do not let them proceed further
-
-
-- know the width of the sprite
-- cut the avail width into parts
-- detect if the width of the sprite moving "x" number of times will not equal a whole number.
-
+$ Game overview
 -------------------------------------------
 
+- Run a function when the user opens the HTML page. 
+- Use javascript to detect the width and height parameters of the tab/window and store these to a variable. 
+- If the player’s token (llama) is touching the edge of the game area, change screens and REGENERATE all the assets for a new level. 
+- In Version 1.0: Do not allow the player to go BACK to the previous game area. 
+- End of the level is when the Llama reaches the barn (instead of a castle) and has to reach a food dish of some sort.
+- Jump on furry animal of some sort, animal loses fur and llama gains said fur and becomes furrier as the game progresses 
+- As llama gets larger and furrier llama becomes bigger, more powerful, and has a harder time jumping
+- If furry creature hits llama, llama loses fur. If llama has no fur, dies.
+
+
+Code challenge: 
+- Know the width of the sprite (this will change over time)
+- Know the location of enemies and rocks
+- Cut the avail width of the screen into parts
+- Detect if the width of the sprite moving "x" number of times will not equal a whole number.
+- Detect whether the image object intersects the enemy or other thing. 
+- If player pushes and holds the arrow key, make the llama go in that direction at the same speed as just pressing the button.
+
+-------------------------------------------
 $ Game Objects
 
-- Assign variables that track the player's movements through the game area.
-  - This can take the form of adding a value to an array, or assigning a new value to a variable whose value is the player's
-  position on the screen
-
-- Assign a variable that knows where on the screen the coins are
+- Assign variables that track the player's movements through the game area. (Height and width coordinates)
+- Assign a coordinate variable that knows where on the screen the food, rocks, and other furry animals are
+- Assign a variable for how much fur the llama has now vs the default size of the llama
+- Assign a variable for jump distance relative to the fur amount on llama
 
 -------------------------------------------
 
 $ Game algorithms
-- Each time the player presses up down left right on the keyboard (or asdw), move the gif one "unit" in that direction.
+
+- Score metrics: Amount of fur && amount of food eaten. 
+- Each time the player presses up, or side (left, right) move the player one unit in that direction. 
   - Assign a series of event listeners to wait for user input and call a function.
     - Something like "when I click up, run function moveUP"
-- Gold coins are generated at random on the page.
-    - You can use a randomize function BUILT INTO JS and create an array (series of values) that distribute the coins
-- Once the player resides in the same coordinates or square as the coin, it is added to a counter at the top.
-  - Check to see if the location of the player (variable) is EQUAL to the location of a generated COIN
-    - If so, add one/10 wtv points to the counter at the top of the screen.
+- Food, rocks and furry creatures are generated at random on the screen 
+    - You can use a randomize function BUILT INTO JS and create an array (series of values) that distribute the non player objects
+- Once the player resides in the same coordinates as the other object, it is added to a counter at the top (fur || food)
+
+-------------------------------------------
+
+How we generate the game world
+Pick a series of distinct colors for each “block” that we generate
+Find out how many of the main blocks (blue for sky, brown for earth, maybe grey for rock) need to be output to fill the entire screen horizontally from left to right 
+Define what a tree object is in color/blocks (3 high dark brown, then 6 around it on top of green)
+Generate trees and other things randomly (test this beforehand)
+Make sure the game is aware 
+
+How? 
+Set relative block size for every object. Standard size for everything. Then find out if player is in the same space as the object square 
+Arbitrarily set the llama sprite 
+
