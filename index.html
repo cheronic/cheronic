@@ -4,23 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title></title>
-        <script type="text/javascript">
-        function pickles(){
-          let width = window.innerWidth-20;
-          let height = window.innerHeight-20;
-          console.log(width, height);
-        let x = document.getElementById('test');
-        x.setAttribute("width", width);
-        x.setAttribute("height", height);
-      }
-        </script>
-        <style>
-        #test{
-          background-color: green;
-        }
-        </style>
+        <script src="llama.js"></script>
+        <link rel="stylesheet" type="text/css" href="llama.css">
     </head>
-    <body onload="pickles()" onresize="pickles()">
+    <body onload="llama()" onresize="llama()">
       <table id="test" border="0"></table>
     </body>
 </html>
