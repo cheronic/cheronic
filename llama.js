@@ -11,12 +11,12 @@ console.log(fill);
 
 for (i=0;i<fill;i++){
 let a = 0;
-let dirt = new Image(100, 100);
+let dirt = new Image(298, 94);
 dirt.src = "Dirt.jpg";
 dirt.style.position="relative";
 dirt.style.left = a + "px";
 dirt.style.bottom = 0 + "px";
 document.body.appendChild(dirt);
-a+=100;
+a+=298;
 }
      }
