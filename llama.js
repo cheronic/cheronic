@@ -5,4 +5,18 @@ function llama(){
 let x = document.getElementById('test');
 x.setAttribute("width", width);
 x.setAttribute("height", height);
+
+let fill = Math.round(width / 100);
+console.log(fill);
+
+for (i=0;i<fill;i++){
+let a = 0;
+let dirt = new Image(100, 100);
+dirt.src = "Dirt.jpg";
+dirt.style.position="relative";
+dirt.style.left = a + "px";
+dirt.style.bottom = 0 + "px";
+document.body.appendChild(dirt);
+a+=100;
 }
+     }
