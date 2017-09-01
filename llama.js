@@ -6,7 +6,7 @@ let x = document.getElementById('test');
 x.setAttribute("width", width);
 x.setAttribute("height", height);
 
-let fill = Math.round(width / 100);
+let fill = Math.round(width / 298);
 console.log(fill);
 
 for (i=0;i<fill;i++){
